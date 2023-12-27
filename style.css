@@ -55,6 +55,14 @@ body {
 .orange {
   background-color: hsl(4, 100%, 67%);
 }
+.labelsForEmail {
+  display: flex;
+  justify-content: space-between;
+}
+.emailErrorText {
+  display: none;
+  color: red;
+}
 .attribution {
   font-size: 11px;
   text-align: center;

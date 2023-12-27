@@ -61,8 +61,11 @@
         
         <form>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label fw-bolder">Email address</label>
-            <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="email@company.com" required>
+            <div class="labelsForEmail">
+              <label for="exampleInputEmail1" class="form-label fw-bolder">Email address</label>
+              <label for="exampleInputEmail1" class="form-label fw-bolder emailErrorText">Valid email required</label>
+            </div>
+            <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="email@company.com">
           </div>
           <button type="submit" class="btn emailBtn btn-lg btn-dark w-100">
             Subscribe to monthly newsletter

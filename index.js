@@ -5,6 +5,7 @@ const emailBtn = document.querySelector(".emailBtn");
 const inputField = document.getElementById("exampleInputEmail1");
 const form = document.querySelector("form");
 const emailEntered = document.querySelector(".emailEntered");
+const emailErrorText = document.querySelector(".emailErrorText");
 // alert(dismissBtn);
 
 dismissBtn.addEventListener("click", () => {
@@ -15,7 +16,23 @@ dismissBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  emailEntered.textContent = inputField.value;
-  thankState.classList.toggle("disappear");
-  cardBody.classList.toggle("disappear");
+  if (formValidityCheck()) {
+    emailEntered.textContent = inputField.value;
+    thankState.classList.toggle("disappear");
+    cardBody.classList.toggle("disappear");
+  } else {
+    emailErrorText.style.display = "inline-block";
+    inputField.style.borderColor = "red";
+    inputField.style.color = "red";
+    inputField.style.backgroundColor = "yellow";
+  }
 });
+
+const formValidityCheck = () => {
+  const inputEmailValue = inputField.value;
+  let isFormValid = true;
+  if (inputEmailValue.trim().length === 0) {
+    isFormValid = false;
+  }
+  return isFormValid;
+};
